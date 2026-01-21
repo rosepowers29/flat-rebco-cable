@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from argparse import ArgumentParser
+from pathlib import Path
 
 R_CABLE = 5.8e-5
 
@@ -29,4 +30,4 @@ for infile in args.infiles:
     I_tape, V_tape = get_tape_current(csv_in)
     csv_in['TAPE_CURRENT'] = I_tape
     csv_in['TAPE_VOLTAGE'] = V_tape
-    csv_in.to_csv(infile+'-cleaned.txt', sep='\t')
+    csv_in.to_csv(Path(infile).stem+'-cleaned.txt', sep='\t')
