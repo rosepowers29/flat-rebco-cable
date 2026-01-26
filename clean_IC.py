@@ -20,9 +20,6 @@ def get_tape_current(infile):
     elif 'CH4' in keys:
         chV_tot = 'CH4'
         chV_tape = 'CH5'
-    elif 'CH5' in keys:
-        chV_tot = 'CH5'
-        chV_tape = 'CH6'        
     else:
         return None
     # fill these with the input data
