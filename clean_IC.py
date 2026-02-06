@@ -17,10 +17,12 @@ def get_tape_current(infile):
         chV_tot = 'CH4'
     elif 'CH5' in keys:
         chV_tot = 'CH5'
+        print("using CH5")
     else:
         return None
     # fill these with the input data
     V_tot = np.array(infile[chV_tot])
+    V_tot = abs(V_tot)
     I_input = np.array(infile['CURRENT'])
 
     try:
