@@ -13,11 +13,11 @@ def get_tape_current(infile):
     # find current and voltage channels
     if 'CH3' in keys:
         chV_tot = 'CH3'
+        #print(keys)
     elif 'CH4' in keys:
         chV_tot = 'CH4'
     elif 'CH5' in keys:
         chV_tot = 'CH5'
-        print("using CH5")
     else:
         return None
     # fill these with the input data
@@ -45,6 +45,8 @@ for infile in args.infiles:
     try:
         I_tape = get_tape_current(csv_in)
     except Exception:
+        print("exception")
+        print(infile)
         continue
     csv_in['TAPE_CURRENT'] = I_tape
     csv_in.to_csv(Path(infile).stem+'-cleaned.txt', sep='\t')
