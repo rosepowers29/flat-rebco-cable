@@ -35,7 +35,7 @@ def get_tape_current(infile, res):
 def get_resistance(resistivity, d_tap):
     # calculate cable resistance given resistivity value and tap spacing
     d_tap_m = d_tap / 1000 #entered in mm, change to meters
-    res = resistivity * d_tap
+    res = resistivity * d_tap_m
     return res
 
 # parse input files
